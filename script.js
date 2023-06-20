@@ -17,6 +17,17 @@ gridButton.addEventListener('click', function () {
     grid(side)
 })
 
+//Have clear feature 
+//Define clear button
+const clearGrid = document.querySelector('.clear')
+clearGrid.addEventListener('click', function () {
+    //CLEAR EXISTING GRID
+    document.querySelector('#container').innerHTML = "";
+    //CALL GRID WITH UPDATED SIDE
+    grid(side)
+})
+
+
 //Define grid-container
 const gridContainer = document.querySelector('#container')
 
@@ -42,7 +53,7 @@ grid(side)
 
 //TO DO LIST:
 //==============================================================================================================
-//Have eraser feature
-//Have clear feature
+//Have eraser feature //NEED TOGGLE FOR THIS
+
 //Have random colour feature
 //Have progressive darkening feature
