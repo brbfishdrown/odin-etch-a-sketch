@@ -3,7 +3,8 @@
 //Make divs appear as a grid( versus just one on each line )
 //Set up hover effect so that grid divs change colour when mouse passes over them
 let side = 16;
-let color = 'red'
+//Be able to choose which colour
+let color = "(155, 0, 0)"
 
 //Define button that will change grid size
 const gridButton = document.querySelector('.number')
@@ -30,7 +31,7 @@ function grid(side) {
         for (let i = 0; i < side; i++) {
             const grid = document.createElement('div');
             grid.style.cssText = 'border: 1px solid black; padding: 10px; /*PADDING FOR VISIBILITY*/'
-            grid.addEventListener('mouseover', function () { grid.style.backgroundColor = 'red' })
+            grid.addEventListener('mouseover', function () { grid.style.background = `rgb${color}` })
             row.appendChild(grid)
         }
     }
@@ -41,7 +42,6 @@ grid(side)
 
 //TO DO LIST:
 //==============================================================================================================
-//Be able to choose which colour
 //Have eraser feature
 //Have clear feature
 //Have random colour feature
