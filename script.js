@@ -3,11 +3,12 @@
 //Make divs appear as a grid( versus just one on each line )
 //Set up hover effect so that grid divs change colour when mouse passes over them
 let side = 16;
-//Be able to choose which colour
-let color = "(155, 0, 0)"
+//Be able to choose which colour //CAN WE PUT 3 BOXES OF TEXT INPUT?
+let color = "(255, 0, 0)"
 
 //Define button that will change grid size
 const gridButton = document.querySelector('.number')
+//Add a button prompting the user for the number of squares per side (maximum 50)
 gridButton.addEventListener('click', function () {
     //PROMPT USER FOR SIDE LENGTH
     side = prompt('Enter the number of grids you want per side (Max 50)')
@@ -42,18 +43,24 @@ function grid(side) {
         for (let i = 0; i < side; i++) {
             const grid = document.createElement('div');
             grid.style.cssText = 'border: 1px solid black; padding: 10px; /*PADDING FOR VISIBILITY*/'
-            grid.addEventListener('mouseover', function () { grid.style.background = `rgb${color}` })
+            grid.addEventListener('mouseover', function () {
+                //IF ERASER = ON, COLOR = WHITE (255, 255, 255)
+                //IF RANDOMIZE = ON, GENERATE 3 RANDOM NUMBERS, STORE INTO RGB VALUE EX. (133, 42, 50)
+                //IF PROGRESSIVE = ON, HAVE RANGE FROM (255,255,255) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
+                grid.style.background = `rgb${color}`
+            })
             row.appendChild(grid)
         }
     }
 }
 grid(side)
 
-//Add a button at the top of the screen prompting the user for the number of squares per side (maximum 100)
+
 
 //TO DO LIST:
 //==============================================================================================================
-//Have eraser feature //NEED TOGGLE FOR THIS
-
-//Have random colour feature
-//Have progressive darkening feature
+//highlight the eraser option when toggled on
+//highlight randomize option when toggled on
+//have a maximum size 960px by 960px so that grid doesn't grow too large (div should flex to accomodate) (try flex shrink?)
+//change from hover to click + drag
+//change website style
