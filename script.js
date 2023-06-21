@@ -32,7 +32,7 @@ let eraser = 0;
 eraserButton.addEventListener('click', function () {
     if (eraser == 0) {
         eraser += 1
-        eraserButton.style.cssText = 'border: 2px solid yellow;'
+        eraserButton.style.cssText = 'border: 4px solid yellow; background-color: rgb(245, 244, 164);'
     } else {
         eraser -= 1
         eraserButton.style.cssText = 'border: 2px solid black;'
@@ -45,7 +45,7 @@ let randomize = 0;
 randomizeButton.addEventListener('click', function () {
     if (randomize == 0) {
         randomize += 1
-        randomizeButton.style.cssText = 'border: 2px solid yellow;'
+        randomizeButton.style.cssText = 'border: 4px solid yellow; background-color: rgb(245, 244, 164);'
     } else {
         randomize -= 1
         randomizeButton.style.cssText = 'border: 2px solid black;'
@@ -63,7 +63,7 @@ let progressive = 0;
 progressiveButton.addEventListener('click', function () {
     if (progressive == 0) {
         progressive += 1
-        progressiveButton.style.cssText = 'border: 2px solid yellow;'
+        progressiveButton.style.cssText = 'border: 2px solid yellow; background-color: rgb(245, 244, 164);'
     } else {
         stroke = 240;
         progressive -= 1
