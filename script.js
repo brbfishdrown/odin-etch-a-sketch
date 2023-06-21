@@ -37,12 +37,17 @@ function grid(side) {
     for (let i = 0; i < side; i++) {
         //Define row; Create (SIDE) number of rows inside container
         const row = document.createElement('div')
-        row.style.cssText = 'display:flex;'
+        row.style.cssText = 'display:flex; max-width: 960px; '
         gridContainer.appendChild(row)
         //Define grid; Create (SIDE) number of grids inside row
         for (let i = 0; i < side; i++) {
             const grid = document.createElement('div');
-            grid.style.cssText = 'border: 1px solid black; padding: 10px;/*PADDING FOR VISIBILITY*/'
+            //Clear grid content
+            grid.textContent = ""
+            //CALCULATE HEIGHT AND WIDTH SIZE
+            let gridSide = (960-2*side)/side
+            //SET STYLE WITH NEW SIZE
+            grid.style.cssText = `border: 1px solid black; width:${gridSide}px; height:${gridSide}px;`
             grid.addEventListener('mouseover', function () {
                 //NEED TO COMPLETE:
                 //====================================================================================================
