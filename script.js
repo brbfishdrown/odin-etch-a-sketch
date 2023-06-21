@@ -1,4 +1,3 @@
-//COMPLETED:
 //Create a grid of 16x16 square divs into grid-container
 //Make divs appear as a grid( versus just one on each line )
 //Set up hover effect so that grid divs change colour when mouse passes over them
@@ -9,7 +8,7 @@ const gridButton = document.querySelector('.number')
 //Add a button prompting the user for the number of squares per side (maximum 50)
 gridButton.addEventListener('click', function () {
     //PROMPT USER FOR SIDE LENGTH
-    side = prompt('Enter the number of grids you want per side (Max 50)')
+    side = prompt('Enter the number of grids you want per side (Max 100)')
     //CLEAR EXISTING GRID
     document.querySelector('#container').innerHTML = "";
     //CALL GRID WITH UPDATED SIDE
@@ -24,6 +23,20 @@ clearGrid.addEventListener('click', function () {
     document.querySelector('#container').innerHTML = "";
     //CALL GRID WITH UPDATED SIDE
     grid(side)
+})
+
+//Define eraser button
+const eraserButton = document.querySelector('.eraser')
+let eraser = 0;
+//highlight the eraser option when toggled on
+eraserButton.addEventListener('click', function() {
+    if (eraser == 0) {
+        eraser = eraser + 1
+        eraserButton.style.cssText = 'border: 2px solid yellow;'
+    } else {
+        eraser = eraser - 1
+        eraserButton.style.cssText = 'border: 2px solid black;'
+    }
 })
 
 
@@ -48,14 +61,20 @@ function grid(side) {
             //SET STYLE WITH NEW SIZE
             grid.style.cssText = `border: 1px solid rgb(245, 245, 245); width:${gridSide}px; height:${gridSide}px;`
             grid.addEventListener('mouseover', function () {
+                //CALL VALUE OF COLOR ON COLORPICKER
+                const color = document.querySelector('#colorpicker').value
+                //SET VALUE OF COLOR PICKER
+                grid.style.background = `${color}`
+                //IF ERASER IS ON
+                if (eraser == 1) {
+                    //OVERWRITE COLOUR
+                    grid.style.background = 'rgb(255,255,255'
+                }
                 //NEED TO COMPLETE:
                 //====================================================================================================
-                //IF ERASER = ON, COLOR = WHITE (255, 255, 255)
                 //IF RANDOMIZE = ON, GENERATE 3 RANDOM NUMBERS, STORE INTO RGB VALUE EX. (133, 42, 50)
                 //IF PROGRESSIVE = ON, HAVE RANGE FROM (255,255,255) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
                 //ABLE TO CHOOSE COLOUR (NEED TO UPDATE IN EVENT LISTENER)
-                const color = document.querySelector('#colorpicker').value
-                grid.style.background = `${color}`
             })
             row.appendChild(grid)
         }
@@ -68,7 +87,6 @@ grid(side)
 
 //TO DO LIST:
 //==============================================================================================================
-//highlight the eraser option when toggled on
 //highlight randomize option when toggled on
 //change from hover to click + drag
 //change website style
