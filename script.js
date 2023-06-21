@@ -42,8 +42,10 @@ function grid(side) {
         //Define grid; Create (SIDE) number of grids inside row
         for (let i = 0; i < side; i++) {
             const grid = document.createElement('div');
-            grid.style.cssText = 'border: 1px solid black; padding: 10px; /*PADDING FOR VISIBILITY*/'
+            grid.style.cssText = 'border: 1px solid black; padding: 10px;/*PADDING FOR VISIBILITY*/'
             grid.addEventListener('mouseover', function () {
+                //NEED TO COMPLETE:
+                //====================================================================================================
                 //IF ERASER = ON, COLOR = WHITE (255, 255, 255)
                 //IF RANDOMIZE = ON, GENERATE 3 RANDOM NUMBERS, STORE INTO RGB VALUE EX. (133, 42, 50)
                 //IF PROGRESSIVE = ON, HAVE RANGE FROM (255,255,255) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
@@ -53,6 +55,7 @@ function grid(side) {
         }
     }
 }
+//INITIAL CALL ON GRID
 grid(side)
 
 
