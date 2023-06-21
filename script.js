@@ -31,6 +31,7 @@ clearGrid.addEventListener('click', function () {
 
 //Define grid-container
 const gridContainer = document.querySelector('#container')
+gridContainer.style.cssText = 'border: 1px solid black; '
 
 //Define function that creates grid
 function grid(side) {
@@ -47,7 +48,7 @@ function grid(side) {
             //CALCULATE HEIGHT AND WIDTH SIZE
             let gridSide = (960-2*side)/side
             //SET STYLE WITH NEW SIZE
-            grid.style.cssText = `border: 1px solid black; width:${gridSide}px; height:${gridSide}px;`
+            grid.style.cssText = `border: 1px solid rgb(245, 245, 245); width:${gridSide}px; height:${gridSide}px;`
             grid.addEventListener('mouseover', function () {
                 //NEED TO COMPLETE:
                 //====================================================================================================
