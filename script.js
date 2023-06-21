@@ -57,7 +57,21 @@ function random(number){
     return Math.floor(Math.random() * number+1)
 }
 
+//Define progressive button
+const progressiveButton = document.querySelector('.progressive')
+let progressive = 0;
+progressiveButton.addEventListener('click', function() {
+    if (progressive == 0) {
+        progressive += 1
+        progressiveButton.style.cssText = 'border: 2px solid yellow;'
+    } else {
+        progressive -= 1
+        progressiveButton.style.cssText = 'border: 2px solid black;'
+    }
+})
 
+//Define progressive darkness start
+let stroke = 240;
 
 //Define grid-container
 const gridContainer = document.querySelector('#container')
@@ -96,10 +110,16 @@ function grid(side) {
                     const random3 = random(255)
                     //assign grid background to these values
                     grid.style.background = `rgb(${random1},${random2},${random3})`
+                    //IF PROGRESSIVE = ON
+                } else if (progressive == 1) {
+                    // STROKE STARTING DARKNESS is 240 initially
+                    //HAVE RANGE FROM (240,240,240) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
+                    grid.style.background = `rgb(${stroke},${stroke},${stroke})`
+                    stroke -= 24
                 }
                 //NEED TO COMPLETE:
                 //====================================================================================================
-                //IF PROGRESSIVE = ON, HAVE RANGE FROM (255,255,255) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
+               
             })
             row.appendChild(grid)
         }
@@ -109,9 +129,5 @@ function grid(side) {
 grid(side)
 
 
-
-//TO DO LIST:
-//==============================================================================================================
-//highlight randomize option when toggled on
 //change from hover to click + drag
 //change website style
