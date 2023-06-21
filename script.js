@@ -92,7 +92,7 @@ function grid(side) {
             //CALCULATE HEIGHT AND WIDTH SIZE
             let gridSide = (960-2*side)/side
             //SET STYLE WITH NEW SIZE
-            grid.style.cssText = `border: 1px solid rgb(245, 245, 245); width:${gridSide}px; height:${gridSide}px;`
+            grid.style.cssText = `background-color:white; border: 1px solid rgb(245, 245, 245); width:${gridSide}px; height:${gridSide}px;`
             grid.addEventListener('mouseover', function () {
                 //CALL VALUE OF COLOR ON COLORPICKER
                 const color = document.querySelector('#colorpicker').value
@@ -116,10 +116,7 @@ function grid(side) {
                     //HAVE RANGE FROM (240,240,240) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
                     grid.style.background = `rgb(${stroke},${stroke},${stroke})`
                     stroke -= 24
-                }
-                //NEED TO COMPLETE:
-                //====================================================================================================
-               
+                }   
             })
             row.appendChild(grid)
         }

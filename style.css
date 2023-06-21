@@ -1,4 +1,6 @@
 body {
+    font-family: arial;
+    font-size: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,6 +8,22 @@ body {
     padding: 0px;
     margin: 0px;
     border: 0px;
+    gap: 10px;
+    background-color:rgb(242,247,247);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1{
+    font-size: 100px;
+    margin: 10px;
+    margin-top: 30px;
 }
 
 .grid-container {
@@ -18,5 +36,40 @@ body {
 
 button {
     border: 2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    background-color:rgb(255,255,255);
 }
 
+.eraser{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#colorpicker {
+    width: 120px;
+    height: 60px;
+    border: 2px solid black;
+}
+
+main{
+    display: flex;
+}
+
+nav{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
