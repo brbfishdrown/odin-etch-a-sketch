@@ -31,13 +31,32 @@ let eraser = 0;
 //highlight the eraser option when toggled on
 eraserButton.addEventListener('click', function() {
     if (eraser == 0) {
-        eraser = eraser + 1
+        eraser += 1
         eraserButton.style.cssText = 'border: 2px solid yellow;'
     } else {
-        eraser = eraser - 1
+        eraser -= 1
         eraserButton.style.cssText = 'border: 2px solid black;'
     }
 })
+
+//Define randomize button
+const randomizeButton = document.querySelector('.randomize')
+let randomize = 0;
+randomizeButton.addEventListener('click', function() {
+    if (randomize == 0) {
+        randomize += 1
+        randomizeButton.style.cssText = 'border: 2px solid yellow;'
+    } else {
+        randomize -= 1
+        randomizeButton.style.cssText = 'border: 2px solid black;'
+    }
+})
+
+//Define random number button
+function random(number){
+    return Math.floor(Math.random() * number+1)
+}
+
 
 
 //Define grid-container
@@ -68,7 +87,15 @@ function grid(side) {
                 //IF ERASER IS ON
                 if (eraser == 1) {
                     //OVERWRITE COLOUR
-                    grid.style.background = 'rgb(255,255,255'
+                    grid.style.background = 'rgb(255,255,255)'
+                    //IF RANDOMIZE IS ON
+                } else if (randomize == 1) {
+                    //recieve 3 random values from 0-255
+                    const random1 = random(255)
+                    const random2 = random(255)
+                    const random3 = random(255)
+                    //assign grid background to these values
+                    grid.style.background = `rgb(${random1},${random2},${random3})`
                 }
                 //NEED TO COMPLETE:
                 //====================================================================================================
