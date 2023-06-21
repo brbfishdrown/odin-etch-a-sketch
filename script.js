@@ -99,9 +99,7 @@ function grid(side) {
                 }
                 //NEED TO COMPLETE:
                 //====================================================================================================
-                //IF RANDOMIZE = ON, GENERATE 3 RANDOM NUMBERS, STORE INTO RGB VALUE EX. (133, 42, 50)
                 //IF PROGRESSIVE = ON, HAVE RANGE FROM (255,255,255) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
-                //ABLE TO CHOOSE COLOUR (NEED TO UPDATE IN EVENT LISTENER)
             })
             row.appendChild(grid)
         }
