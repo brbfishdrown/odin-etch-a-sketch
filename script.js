@@ -29,7 +29,7 @@ clearGrid.addEventListener('click', function () {
 const eraserButton = document.querySelector('.eraser')
 let eraser = 0;
 //highlight the eraser option when toggled on
-eraserButton.addEventListener('click', function() {
+eraserButton.addEventListener('click', function () {
     if (eraser == 0) {
         eraser += 1
         eraserButton.style.cssText = 'border: 2px solid yellow;'
@@ -42,7 +42,7 @@ eraserButton.addEventListener('click', function() {
 //Define randomize button
 const randomizeButton = document.querySelector('.randomize')
 let randomize = 0;
-randomizeButton.addEventListener('click', function() {
+randomizeButton.addEventListener('click', function () {
     if (randomize == 0) {
         randomize += 1
         randomizeButton.style.cssText = 'border: 2px solid yellow;'
@@ -53,24 +53,25 @@ randomizeButton.addEventListener('click', function() {
 })
 
 //Define random number button
-function random(number){
-    return Math.floor(Math.random() * number+1)
+function random(number) {
+    return Math.floor(Math.random() * number + 1)
 }
 
 //Define progressive button
 const progressiveButton = document.querySelector('.progressive')
 let progressive = 0;
-progressiveButton.addEventListener('click', function() {
+progressiveButton.addEventListener('click', function () {
     if (progressive == 0) {
         progressive += 1
         progressiveButton.style.cssText = 'border: 2px solid yellow;'
     } else {
+        stroke = 240;
         progressive -= 1
         progressiveButton.style.cssText = 'border: 2px solid black;'
     }
 })
 
-//Define progressive darkness start
+// STROKE STARTING DARKNESS is 240 initially
 let stroke = 240;
 
 //Define grid-container
@@ -90,7 +91,7 @@ function grid(side) {
             //Clear grid content
             grid.textContent = ""
             //CALCULATE HEIGHT AND WIDTH SIZE
-            let gridSide = (960-2*side)/side
+            let gridSide = (960 - 2 * side) / side
             //SET STYLE WITH NEW SIZE
             grid.style.cssText = `background-color:white; border: 1px solid rgb(245, 245, 245); width:${gridSide}px; height:${gridSide}px;`
             grid.addEventListener('mouseover', function () {
@@ -116,7 +117,7 @@ function grid(side) {
                     //HAVE RANGE FROM (240,240,240) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
                     grid.style.background = `rgb(${stroke},${stroke},${stroke})`
                     stroke -= 24
-                }   
+                }
             })
             row.appendChild(grid)
         }
