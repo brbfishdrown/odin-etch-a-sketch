@@ -3,8 +3,6 @@
 //Make divs appear as a grid( versus just one on each line )
 //Set up hover effect so that grid divs change colour when mouse passes over them
 let side = 16;
-//Be able to choose which colour //CAN WE PUT 3 BOXES OF TEXT INPUT?
-let color = "(255, 0, 0)"
 
 //Define button that will change grid size
 const gridButton = document.querySelector('.number')
@@ -55,7 +53,9 @@ function grid(side) {
                 //IF ERASER = ON, COLOR = WHITE (255, 255, 255)
                 //IF RANDOMIZE = ON, GENERATE 3 RANDOM NUMBERS, STORE INTO RGB VALUE EX. (133, 42, 50)
                 //IF PROGRESSIVE = ON, HAVE RANGE FROM (255,255,255) AND DECREASE BY 10% UNTIL (0,0,0) FOR BLACK
-                grid.style.background = `rgb${color}`
+                //ABLE TO CHOOSE COLOUR (NEED TO UPDATE IN EVENT LISTENER)
+                const color = document.querySelector('#colorpicker').value
+                grid.style.background = `${color}`
             })
             row.appendChild(grid)
         }
@@ -70,6 +70,5 @@ grid(side)
 //==============================================================================================================
 //highlight the eraser option when toggled on
 //highlight randomize option when toggled on
-//have a maximum size 960px by 960px so that grid doesn't grow too large (div should flex to accomodate) (try flex shrink?)
 //change from hover to click + drag
 //change website style
