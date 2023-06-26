@@ -62,6 +62,7 @@ const progressiveButton = document.querySelector('.progressive')
 let progressive = 0;
 progressiveButton.addEventListener('click', function () {
     if (progressive == 0) {
+        stroke = 240;
         progressive += 1
         progressiveButton.style.cssText = 'border: 2px solid yellow; background-color: rgb(245, 244, 164);'
     } else {
